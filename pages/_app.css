@@ -1,4 +1,4 @@
-footer{
+footer, header{
     display: flex;
     justify-content:space-around;
     background-color: rgba(144, 144, 144, 0.266);
