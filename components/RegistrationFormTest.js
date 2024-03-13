@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/router';
 import styles from './RegistrationFormTest.module.css';
+import { FaCheckCircle } from 'react-icons/fa';
+
 
 export default function RegistrationForm() {
     const [step, setStep] = useState(1);
@@ -162,6 +164,14 @@ export default function RegistrationForm() {
     };
 
     useEffect(() => { console.log(userData) }, [userData]);
+
+    useEffect(() => {
+        if (step === 6) {
+            setTimeout(() => {
+                setStep(7);
+            }, 5000);
+        }
+    }, [step === 6]);
 
     switch (step) {
         case 1:
@@ -417,9 +427,56 @@ export default function RegistrationForm() {
                         </div>
                         <div className={styles.buttoncontainer}>
                             <button type="button" class="btn btn-primary" onClick={prevStep}>Zurück</button>
-                            <button type="submit" class="btn btn-primary" onClick={handleSubmit}>Fertig</button>
+                            <button type="button" class="btn btn-primary" onClick={nextStep}>Fertig</button>
                         </div>
                     </form>
+                </div>
+            );
+        case 6:
+            return (
+                <div style={{ textAlign: 'center', marginTop: '50px' }}>
+                    <FaCheckCircle size={100} color="green" />
+                    <h1>Registration Successful</h1>
+                </div>
+
+            );
+        case 7:
+            return (
+                <div className="container mt-5">
+                    <h2>Ihre Anmeldung wurde mit diesen Daten verschickt.</h2>
+                    <hr />
+                    <h3>Teilnehmer</h3>
+                    <p>Name: {userData.participant.firstName} {userData.participant.lastName}</p>
+                    <p>Email: {userData.participant.email}</p>
+                    <p>Tel: {userData.participant.phone}</p>
+                    <p>Adresse: {userData.participant.street} {userData.participant.zipCode} {userData.participant.city}</p>
+
+
+                    <br />
+                    <br />
+                    <h3>Eltern</h3>
+                    <p>Mutter: {userData.parentPart2.firstName} {userData.parentPart2.lastName}</p>
+                    <p>Email: {userData.parentPart2.email}</p>
+                    <p>Tel: {userData.parentPart2.phone}</p>
+                    <p>Adresse: {userData.parentPart2.street} {userData.parentPart2.zipCode} {userData.parentPart2.city}</p>
+
+                    <br />
+                    <p>Vater: {userData.parentPart1.firstName} {userData.parentPart1.lastName}</p>
+                    <p>Email: {userData.parentPart1.email}</p>
+                    <p>Tel: {userData.parentPart1.phone}</p>
+                    <p>Adresse: {userData.parentPart1.street} {userData.parentPart1.zipCode} {userData.parentPart1.city}</p>
+
+                    
+                    <br />
+                    <br />
+                    <h4>Wir hoffen, dass die Angaben stimmen, sonst Melden Sie sich bitte beim Sekreteriat.</h4>
+                    <br />
+                    <br />
+                    <h4>Wir freuen uns auf ein tolles Lager mit dir!</h4>
+                    <br />
+                    <br />
+                    <br />
+
                 </div>
             );
         default:
