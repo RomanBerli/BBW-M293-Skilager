@@ -6,22 +6,12 @@ import Header from "../components/Header";
 export default function App({ Component, pageProps }) {
 
   return (
-    //Das wird immer Angezeit
-    //im div code:
-
     <div>
       <Header></Header>
-
-
-
-
-
       <main>
         <Component {...pageProps} />
       </main>
-
       <Footer></Footer>
-
     </div>
   )
 }

@@ -1,12 +1,11 @@
-footer, header{
+footer,
+header {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     background-color: rgba(144, 144, 144, 0.266);
 }
-/* body{
-    text-align: center;
-} */
-.form-eltern{
+
+.form-eltern {
     display: flex;
     justify-content: space-around;
     margin: 0%;
@@ -14,11 +13,11 @@ footer, header{
     text-align: center;
 }
 
-.form-1{
+.form-1 {
     width: 45%;
 }
 
 
-header img{
+header img {
     padding: 20pt;
 }

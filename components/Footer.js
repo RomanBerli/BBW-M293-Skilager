@@ -4,8 +4,7 @@ export default function Footer() {
             <footer>
                 <div>
                     <h3>
-                    <br />
-
+                        <br />
                         Schule Gugus
                     </h3>
                     <p>Bergstrasse 12</p>
@@ -16,8 +15,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                <br />
-
+                    <br />
                     <h3>
                         Öffnungszeiten Schulverwaltung
                     </h3>

@@ -59,88 +59,6 @@ export default function RegistrationForm() {
 
     const router = useRouter();
 
-    // const handleChange = (e) => {
-    //     const { name, value, type, checked } = e.target;
-    //     setUserData(prevUserData => ({
-    //         ...prevUserData,
-    //         participant: {
-    //             ...prevUserData.participant,
-    //             [name]: type === 'checkbox' ? checked : value,
-    //         }
-
-    //     }));
-    // };
-
-    // const handleChange = (e, section, part = null) => {
-    //     const { name, value, type, checked } = e.target;
-
-    //     setUserData(prevUserData => {
-    //         // Update for participant or billing or sport
-    //         if (section !== 'parents') {
-    //             return {
-    //                 ...prevUserData,
-    //                 [section]: {
-    //                     ...prevUserData[section],
-    //                     [name]: type === 'checkbox' ? checked : value,
-    //                 },
-    //             };
-    //         }
-
-    //         // Update for parents (part1 or part2)
-    //         if (section === 'parents') {
-    //             return {
-    //                 ...prevUserData,
-    //                 parents: prevUserData.parents.map((parent, index) => {
-    //                     if (index === 0) { // Assuming you want to update the first item in the parents array
-    //                         return {
-    //                             ...parent,
-    //                             [part]: {
-    //                                 ...parent[part],
-    //                                 [name]: type === 'checkbox' ? checked : value,
-    //                             },
-    //                         };
-    //                     }
-    //                     return parent;
-    //                 }),
-    //             };
-    //         }
-    //     });
-    // };
-
-    // const handleChange = (e, field, parentField = null, index = null) => {
-    //     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-
-    //     setUserData(prevState => {
-    //       if (parentField !== null && index !== null) {
-    //         // Handle changes in arrays
-    //         return {
-    //           ...prevState,
-    //           [parentField]: prevState[parentField].map((item, idx) => {
-    //             if (idx !== index) return item;
-    //             return { ...item, [field]: { ...item[field], [e.target.name]: value } };
-    //           })
-    //         };
-    //       } else if (parentField !== null) {
-    //         // Handle changes in nested objects
-    //         return {
-    //           ...prevState,
-    //           [parentField]: {
-    //             ...prevState[parentField],
-    //             [field]: { ...prevState[parentField][field], [e.target.name]: value }
-    //           }
-    //         };
-    //       } else {
-    //         // Handle changes in top-level fields
-    //         return { ...prevState, [field]: { ...prevState[field], [e.target.name]: value } };
-    //       }
-    //     });
-    //   };
-
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setUserData({ ...userData, [name]: value });
-    // };
-
     const handleChange = (section, field, value) => {
         setUserData(prevData => ({
             ...prevData,
@@ -466,7 +384,7 @@ export default function RegistrationForm() {
                     <p>Tel: {userData.parentPart1.phone}</p>
                     <p>Adresse: {userData.parentPart1.street} {userData.parentPart1.zipCode} {userData.parentPart1.city}</p>
 
-                    
+
                     <br />
                     <br />
                     <h4>Wir hoffen, dass die Angaben stimmen, sonst Melden Sie sich bitte beim Sekreteriat.</h4>
