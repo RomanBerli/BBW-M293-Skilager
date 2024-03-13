@@ -3,9 +3,7 @@ footer, header{
     justify-content:space-around;
     background-color: rgba(144, 144, 144, 0.266);
 }
-body{
-    text-align: center;
-}
+
 .form-eltern{
     display: flex;
     justify-content: space-around;
@@ -16,4 +14,9 @@ body{
 
 .form-1{
     width: 45%;
+}
+
+
+header img{
+    padding: 20pt;
 }

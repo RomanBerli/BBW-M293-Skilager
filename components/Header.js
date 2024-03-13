@@ -4,7 +4,10 @@ export default function Header() {
             <header>
                 <div>
                     <h1>
-                        Schule Gugus
+                        <a href="/"> <img src="schule.png" height="150pt"></img></a>
+                   
+
+                          Schule Gugus
                         <br />
                         <br />
 
